@@ -1,1 +1,5 @@
-# react_practice-crypto
+# React Practice - Crypto App  
+
+# Tech Stack:  
+- React  
+- Vite  
