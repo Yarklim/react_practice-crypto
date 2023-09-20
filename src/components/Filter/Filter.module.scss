@@ -1,0 +1,23 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+
+  padding: 10px;
+
+  border-radius: 12px;
+
+  background-color: aliceblue;
+}
+
+.filterInput {
+  padding: 10px 15px;
+
+  border-radius: 12px;
+  border: 1px solid #2e6da0;
+
+  background-color: #fff;
+}
