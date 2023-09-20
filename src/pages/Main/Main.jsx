@@ -5,13 +5,7 @@ import CoinsList from '../../components/CoinsList/CoinsList';
 import Filter from '../../components/Filter/Filter';
 import s from './Main.module.scss';
 
-const Main = ({
-  coins,
-  balance,
-  setBalance,
-  filteredCoins,
-  setFilteredCoins,
-}) => {
+const Main = ({ coins, balance, setBalance, setFilteredCoins }) => {
   // Пример мемоизации значения
   //   const filterExpensiveCoins = () => {
   //     return coins.filter((coin) => coin.price > 1000);
@@ -21,12 +15,8 @@ const Main = ({
   return (
     <main className={s.main}>
       <Card balance={balance} setBalance={setBalance} />
-      <Filter coins={coins} setFilteredCoins={setFilteredCoins} />
-      {coins.length > 0 ? (
-        <CoinsList coins={filteredCoins} />
-      ) : (
-        <div>Loading...</div>
-      )}
+      <Filter setFilteredCoins={setFilteredCoins} />
+      {coins.length > 0 ? <CoinsList /> : <div>Loading...</div>}
     </main>
   );
 };
@@ -38,5 +28,4 @@ Main.propTypes = {
   balance: PropTypes.number.isRequired,
   setBalance: PropTypes.func,
   setFilteredCoins: PropTypes.func,
-  filteredCoins: PropTypes.array,
 };

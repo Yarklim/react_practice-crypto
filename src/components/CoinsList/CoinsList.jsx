@@ -1,11 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable react-refresh/only-export-components */
+import React, { useContext } from 'react';
+import { CoinsContext } from '../../context/coinsContext';
 import s from './CoinsList.module.scss';
 
-const CoinsList = ({ coins }) => {
+const CoinsList = () => {
+  const coinsContext = useContext(CoinsContext);
+  const { filteredCoins } = coinsContext;
+
   return (
     <ul className={s.coinsList}>
-      {coins.map((coin) => (
+      {filteredCoins.map((coin) => (
         <li className={s.coinItem} key={coin.uuid}>
           <div className={s.coinItemInfo}>
             <img
@@ -30,7 +34,3 @@ const CoinsList = ({ coins }) => {
 };
 
 export default React.memo(CoinsList);
-
-CoinsList.propTypes = {
-  coins: PropTypes.array,
-};

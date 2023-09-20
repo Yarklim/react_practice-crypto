@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { CoinsContext } from '../../context/coinsContext';
 import s from './Filter.module.scss';
 
-const Filter = ({ coins, setFilteredCoins }) => {
+const Filter = ({ setFilteredCoins }) => {
+  const coinsContext = useContext(CoinsContext);
+  const { coins } = coinsContext;
+
   const [value, setValue] = useState('');
 
   useEffect(() => {
@@ -28,6 +32,5 @@ const Filter = ({ coins, setFilteredCoins }) => {
 export default Filter;
 
 Filter.propTypes = {
-  coins: PropTypes.array,
   setFilteredCoins: PropTypes.func,
 };
