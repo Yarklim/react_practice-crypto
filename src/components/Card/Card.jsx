@@ -1,14 +1,14 @@
+import { withUaBalance } from '../../helpers/hoc/withUaBalance';
 import s from './Card.module.scss';
 import PropTypes from 'prop-types';
 
-const Card = ({ balance, setBalance }) => {
+// eslint-disable-next-line no-unused-vars
+const Card = ({ balance, setBalance, uaBalance }) => {
   return (
     <div className={s.card}>
       <div className={s.cardBlock}>
         <p>CRYPTO-FINANCE</p>
-        <button onClick={() => setBalance((prev) => prev + 1000)}>
-          Add money
-        </button>
+        <button onClick={setBalance}>Add money</button>
       </div>
       <div className={s.cardBlock}>
         <p>YAR KLIM</p>
@@ -18,9 +18,10 @@ const Card = ({ balance, setBalance }) => {
   );
 };
 
-export default Card;
+export default withUaBalance(Card);
 
 Card.propTypes = {
   balance: PropTypes.number.isRequired,
   setBalance: PropTypes.func,
+  uaBalance: PropTypes.number,
 };

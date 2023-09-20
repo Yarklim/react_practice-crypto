@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import s from './CoinsList.module.scss';
 
@@ -28,7 +29,7 @@ const CoinsList = ({ coins }) => {
   );
 };
 
-export default CoinsList;
+export default React.memo(CoinsList);
 
 CoinsList.propTypes = {
   coins: PropTypes.array,
