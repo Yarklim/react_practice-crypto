@@ -31,7 +31,7 @@ function App() {
           coins={coins}
           balance={balance}
           setBalance={addBalance}
-          setFilteredCoins={setFilteredCoins}
+          setCoins={setFilteredCoins}
           filteredCoins={filteredCoins}
         />
       </CoinsContext.Provider>

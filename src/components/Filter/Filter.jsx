@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CoinsContext } from '../../context/coinsContext';
 import s from './Filter.module.scss';
 
-const Filter = ({ setFilteredCoins }) => {
+const Filter = ({ setCoins }) => {
   const coinsContext = useContext(CoinsContext);
   const { coins } = coinsContext;
 
@@ -13,8 +13,8 @@ const Filter = ({ setFilteredCoins }) => {
     const filteredCoins = coins.filter((coin) =>
       coin.name.toLowerCase().includes(value)
     );
-    setFilteredCoins(filteredCoins);
-  }, [coins, setFilteredCoins, value]);
+    setCoins(filteredCoins);
+  }, [coins, setCoins, value]);
 
   return (
     <div className={s.filter}>
@@ -32,5 +32,5 @@ const Filter = ({ setFilteredCoins }) => {
 export default Filter;
 
 Filter.propTypes = {
-  setFilteredCoins: PropTypes.func,
+  setCoins: PropTypes.func,
 };

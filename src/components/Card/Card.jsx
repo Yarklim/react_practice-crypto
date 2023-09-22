@@ -1,4 +1,4 @@
-import { withUaBalance } from '../../helpers/hoc/withUaBalance';
+import { WithUaBalance } from '../../helpers/hoc/withUaBalance';
 import s from './Card.module.scss';
 import PropTypes from 'prop-types';
 
@@ -18,7 +18,7 @@ const Card = ({ balance, setBalance, uaBalance }) => {
   );
 };
 
-export default withUaBalance(Card);
+export default WithUaBalance(Card);
 
 Card.propTypes = {
   balance: PropTypes.number.isRequired,
