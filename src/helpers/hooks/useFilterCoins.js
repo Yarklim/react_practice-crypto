@@ -8,6 +8,7 @@ export const useFilterCoins = (coins, setCoins) => {
       coin.name.toLowerCase().includes(value)
     );
     setCoins(filteredCoins);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return { value, setValue };
