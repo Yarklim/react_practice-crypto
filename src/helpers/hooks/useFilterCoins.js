@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
-export const useFilterCoins = (coins, setFilteredCoins) => {
+export const useFilterCoins = (coins, setCoins) => {
   const [value, setValue] = useState('');
 
   useEffect(() => {
     const filteredCoins = coins.filter((coin) =>
-      coin.name.toLowerCase().includes(value.toLowerCase())
+      coin.name.toLowerCase().includes(value)
     );
-    setFilteredCoins(filteredCoins);
-  }, [coins, setFilteredCoins, value]);
+    setCoins(filteredCoins);
+  }, [value]);
 
   return { value, setValue };
 };

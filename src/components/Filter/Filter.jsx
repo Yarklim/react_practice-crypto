@@ -1,20 +1,14 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { CoinsContext } from '../../context/coinsContext';
 import s from './Filter.module.scss';
+import { useFilterCoins } from '../../helpers/hooks/useFilterCoins';
 
 const Filter = ({ setCoins }) => {
   const coinsContext = useContext(CoinsContext);
   const { coins } = coinsContext;
 
-  const [value, setValue] = useState('');
-
-  useEffect(() => {
-    const filteredCoins = coins.filter((coin) =>
-      coin.name.toLowerCase().includes(value)
-    );
-    setCoins(filteredCoins);
-  }, [coins, setCoins, value]);
+  const { value, setValue } = useFilterCoins(coins, setCoins);
 
   return (
     <div className={s.filter}>
