@@ -3,12 +3,14 @@ import s from './Card.module.scss';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line no-unused-vars
-const Card = ({ balance, setBalance, uaBalance }) => {
+const Card = ({ balance, setBalance }) => {
   return (
     <div className={s.card}>
       <div className={s.cardBlock}>
         <p>CRYPTO-FINANCE</p>
-        <button onClick={setBalance}>Add money</button>
+        <button className={s.cardBtn} onClick={setBalance}>
+          Add money
+        </button>
       </div>
       <div className={s.cardBlock}>
         <p>YAR KLIM</p>
